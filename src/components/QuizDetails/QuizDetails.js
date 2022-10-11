@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const QuizDetails = ({ quiz, index }) => {
   //   console.log(quiz);
@@ -8,9 +9,9 @@ const QuizDetails = ({ quiz, index }) => {
   const handleChange = (e) => {
     console.log(e);
     if (e === correctAnswer) {
-      alert("right");
+      toast.success("Great !! Your Answer is Correct", { autoClose: 2000 });
     } else {
-      alert("wrong");
+      toast.error("Opps!! Your Answer is Worng", { autoClose: 2000 });
     }
   };
 
