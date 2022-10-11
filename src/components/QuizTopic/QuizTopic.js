@@ -1,10 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const QuizTopic = ({ topic }) => {
-  const { logo, name, total } = topic;
-  console.log(topic);
+  const { id, logo, name, total } = topic;
+  // console.log(topic);
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate(`/home/${id}`);
+  };
+
   return (
     <div>
       <div className="card w-11/12 shadow-xl mx-auto bg-emerald-100">
@@ -15,7 +21,10 @@ const QuizTopic = ({ topic }) => {
           <h2 className="card-title text-2xl">{name}</h2>
           <h5>Total Question: {total}</h5>
           <div className="card-actions mt-4">
-            <button className="btn btn-accent hover:btn-error w-56 font-normal text-[17px] align-items-center">
+            <button
+              onClick={handleNavigate}
+              className="btn btn-accent hover:btn-error w-56 font-normal text-[17px] align-items-center"
+            >
               <p>Start Quiz</p>
               <FontAwesomeIcon
                 icon={faArrowAltCircleRight}
