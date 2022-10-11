@@ -10,9 +10,11 @@ const Quiz = () => {
   return (
     <div>
       <h1 className="text-3xl text-cyan-600 mt-14">Quiz of {quizTopic.name}</h1>
-      {quizs.map((quiz) => (
-        <QuizDetails key={quiz.id} quiz={quiz}></QuizDetails>
-      ))}
+      <div className="grid grid-cols-1 gap-10 mt-10">
+        {quizs.map((quiz, index) => (
+          <QuizDetails key={quiz.id} quiz={quiz} index={index}></QuizDetails>
+        ))}
+      </div>
     </div>
   );
 };
