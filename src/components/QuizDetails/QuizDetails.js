@@ -28,13 +28,15 @@ const QuizDetails = ({ quiz, index }) => {
             key={idx}
           >
             <input
-              type="checkbox"
-              name="option"
-              value="answer"
-              className="checkbox checkbox-primary"
+              type="radio"
+              name={id}
+              value={option}
+              id={option}
+              className="radio radio-primary"
             />
-            {/* <label htmlFor="option">{option}</label> */}
-            <p className="pl-5">{option}</p>
+            <label className="pl-5 text-[17px]" htmlFor={option}>
+              {option}
+            </label>
           </button>
         ))}
       </h5>
