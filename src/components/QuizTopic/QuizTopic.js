@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 const QuizTopic = ({ topic }) => {
   const { logo, name, total } = topic;
@@ -13,8 +15,12 @@ const QuizTopic = ({ topic }) => {
           <h2 className="card-title text-2xl">{name}</h2>
           <h5>Total Question: {total}</h5>
           <div className="card-actions mt-4">
-            <button className="btn btn-accent hover:btn-error w-60 font-normal text-[17px]">
-              Start Quiz
+            <button className="btn btn-accent hover:btn-error w-56 font-normal text-[17px] align-items-center">
+              <p>Start Quiz</p>
+              <FontAwesomeIcon
+                icon={faArrowAltCircleRight}
+                className="font-normal text-lg px-2 py-3"
+              ></FontAwesomeIcon>
             </button>
           </div>
         </div>
