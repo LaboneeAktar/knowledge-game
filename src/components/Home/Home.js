@@ -1,9 +1,12 @@
 import React from "react";
+import TopOfHome from "../TopOfHome/TopOfHome";
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <div>
+        <TopOfHome></TopOfHome>
+      </div>
     </div>
   );
 };
