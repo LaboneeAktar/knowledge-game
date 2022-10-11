@@ -17,6 +17,8 @@ function App() {
         {
           path: "/",
           element: <Home></Home>,
+          loader: async () =>
+            fetch("https://openapi.programming-hero.com/api/quiz"),
         },
         {
           path: "/home",

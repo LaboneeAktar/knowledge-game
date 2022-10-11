@@ -1,5 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 const QuizDetails = ({ quiz, index }) => {
   //   console.log(quiz);
@@ -15,17 +17,26 @@ const QuizDetails = ({ quiz, index }) => {
     }
   };
 
+  const handleAnswer = () => {
+    toast.info(correctAnswer);
+  };
+
   return (
-    <div className="bg-cyan-100 shadow-lg p-10 lg:mx-40 border rounded-lg">
-      <h2 className="text-xl pb-4 text-start">
-        <span className="font-semibold">Question - {index + 1} : </span>
-        {question.replace(/(<([^>]+)>)/gi, "")}
-      </h2>
+    <div className="bg-cyan-100 shadow-lg p-10 lg:mx-40 mx-4 border rounded-lg">
+      <div className="flex justify-between">
+        <h2 className="text-xl pb-4 text-start">
+          <span className="font-semibold">Question - {index + 1} : </span>
+          {question.replace(/(<([^>]+)>)/gi, "")}
+        </h2>
+        <button onClick={handleAnswer}>
+          <FontAwesomeIcon className="lg:pt-2" icon={faEye}></FontAwesomeIcon>
+        </button>
+      </div>
       <h5>
         {options.map((option, idx) => (
           <button
             onClick={(e) => handleChange(option)}
-            className="flex ml-16 p-3"
+            className="flex lg:ml-16 p-3"
             key={idx}
           >
             <input
