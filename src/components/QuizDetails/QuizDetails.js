@@ -1,4 +1,3 @@
-import React from "react";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
@@ -8,9 +7,8 @@ const QuizDetails = ({ quiz, index }) => {
 
   const { id, question, options, correctAnswer } = quiz;
 
-  const handleChange = (e) => {
-    console.log(e);
-    if (e === correctAnswer) {
+  const handleChange = (selectedOption) => {
+    if (selectedOption === correctAnswer) {
       toast.success("Great !! Your Answer is Correct", { autoClose: 2000 });
     } else {
       toast.error("Opps!! Your Answer is Worng", { autoClose: 2000 });
@@ -19,6 +17,7 @@ const QuizDetails = ({ quiz, index }) => {
 
   const handleAnswer = () => {
     toast.info(correctAnswer);
+    <FontAwesomeIcon className="lg:pt-2" icon={faEye}></FontAwesomeIcon>;
   };
 
   return (
@@ -29,7 +28,11 @@ const QuizDetails = ({ quiz, index }) => {
           {question.replace(/(<([^>]+)>)/gi, "")}
         </h2>
         <button onClick={handleAnswer}>
-          <FontAwesomeIcon className="lg:pt-2" icon={faEye}></FontAwesomeIcon>
+          <FontAwesomeIcon
+            className="lg:pt-2"
+            icon={faEye}
+            title="Show Answer"
+          ></FontAwesomeIcon>
         </button>
       </div>
       <h5>

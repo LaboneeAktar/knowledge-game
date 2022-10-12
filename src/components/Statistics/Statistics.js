@@ -18,7 +18,9 @@ const Statistics = () => {
 
   return (
     <div className="mx-auto">
-      <h1 className="text-2xl m-10">Total Number of Questions BarChart</h1>
+      <h1 className="text-2xl m-10 text-cyan-600">
+        Total Number of Questions BarChart
+      </h1>
 
       <ResponsiveContainer width="100%" height={500}>
         <BarChart
